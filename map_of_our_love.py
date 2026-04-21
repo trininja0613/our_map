@@ -50,6 +50,19 @@ flight_time = 2.5 # Estimated flight hours
 m = folium.Map(location=[38.5, -86.5], zoom_start=6, tiles="Cartodb dark_matter")
 
 # 1. The Dashboard (Now with Travel Math)
+# --- Countdown Logic ---
+from datetime import datetime
+target_date = datetime(2026, 5, 7, 12, 0, 0, tzinfo=pytz.timezone('US/Eastern'))
+now = datetime.now(pytz.timezone('US/Eastern'))
+days_until = (target_date - now).days
+
+# If she's already arrived or it's the day of
+if days_until > 0:
+    countdown_text = f"<b>{days_until} Days</b> until Charlotte ❤️"
+else:
+    countdown_text = "<b>The wait is over!</b> ✈️"
+
+# --- Map Construction ---
 dashboard_html = f"""
 <style>
     .connection-box {{
@@ -65,32 +78,28 @@ dashboard_html = f"""
         font-family: 'Segoe UI', sans-serif; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }}
-
-    /* This part is the "Mobile Magic" */
+    .countdown-banner {{
+        background: linear-gradient(45deg, #8B0000, #FF0000);
+        color: white;
+        padding: 5px;
+        border-radius: 6px;
+        text-align: center;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }}
     @media only screen and (max-width: 600px) {{
-        .connection-box {{
-            width: 180px;      /* Slimmer box */
-            padding: 8px;      /* Less padding */
-            top: 10px; 
-            right: 10px;
-        }}
-        .connection-box b {{
-            font-size: 11px;   /* Smaller labels */
-        }}
-        .connection-box span, .connection-box div {{
-            font-size: 10px;   /* Tiny data text */
-        }}
-        .connection-title {{
-            font-size: 12px !important;
-        }}
-        .connection-quote {{
-            display: none;     /* Hide the quote on mobile to save space */
-        }}
+        .connection-box {{ width: 180px; padding: 8px; top: 10px; right: 10px; }}
+        .connection-box b {{ font-size: 11px; }}
+        .connection-box span, .connection-box div {{ font-size: 10px; }}
+        .connection-title {{ font-size: 12px !important; }}
+        .countdown-banner {{ font-size: 10px; padding: 3px; }}
+        .connection-quote {{ display: none; }}
     }}
 </style>
 
 <div class="connection-box">
-    <center><b class="connection-title" style="color: #8B0000; font-size: 15px;">Connection Status</b></center>
+    <div class="countdown-banner">{countdown_text}</div>
+    <center><b class="connection-title" style="color: #8B0000; font-size: 14px;">Connection Status</b></center>
     <hr style="border: 0.5px solid #ccc; margin: 5px 0;">
     <div>
         <b>Waterloo:</b> <span>{alo_now} • {alo_weather}</span><br>
@@ -98,9 +107,6 @@ dashboard_html = f"""
         <b>Gap:</b> <span>{exact_miles:.0f} miles</span><br>
         <b>Travel:</b> <span>~{drive_time:.0f}h Drive / {flight_time}h Flight</span>
     </div>
-    <p class="connection-quote" style="font-size: 10px; color: #666; margin-top: 5px; font-style: italic;">
-        "No matter the distance..."
-    </p>
 </div>
 """
 m.get_root().html.add_child(folium.Element(dashboard_html))

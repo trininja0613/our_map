@@ -1,0 +1,32 @@
+name: Hourly Connection Update
+
+on:
+  schedule:
+    - cron: "0 * * * *" # This triggers the "heartbeat" every hour
+  workflow_dispatch: # This lets you click a button to update it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Libraries
+        run: pip install -r requirements.txt
+
+      - name: Generate Fresh Map
+        run: python your_script_name.py # <-- CHANGE THIS to your actual .py filename
+
+      - name: Deploy Update to Repo
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add index.html
+          git commit -m "Automated Heartbeat: Weather & Time Sync" || exit 0
+          git push

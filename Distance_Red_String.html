@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_815995c1c2f0c3ffa55ea0e0eb0f56f9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            top: 25px; right: 25px; width: 240px;
+            background-color: white; border: 3px solid #FF0000;
+            z-index: 9999; border-radius: 15px; padding: 15px;
+            font-family: 'Arial', sans-serif; 
+            box-shadow: 0 0 15px rgba(0,0,0,0.4)">
+<b style="color: #8B0000; font-size: 16px;">The Connection</b><br>
+<hr style="border: 0.5px solid #eee;">
+<b>Distance:</b> 799 miles<br>
+<b>Waterloo Weather:</b> 54.79°F, Overcast clouds<br>
+<b>Status:</b> <span style="color: #FF0000; font-weight: bold;">Pulse Detected</span><br>
+<b>My Time:</b> 11:20 PM | <b>Her Time:</b> 10:20 PM
+<p style="font-size: 10px; color: #666; margin-top: 10px;">
+"No matter the distance, my love for you will never wane or tire."</p>
+</div>
+    
+<script>
+function showSecret() {
+    alert("Distance is just a test to see how far love can travel. You're doing great, Reign!");
+}
+</script>
+<button onclick="showSecret()" style="position:fixed; bottom:20px; left:20px; z-index:9999; 
+    padding:10px; background:red; color:white; border-radius:5px; border:none; cursor:pointer;">
+    Click for a Message
+</button>
+    
+            <div class="folium-map" id="map_815995c1c2f0c3ffa55ea0e0eb0f56f9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_815995c1c2f0c3ffa55ea0e0eb0f56f9 = L.map(
+                "map_815995c1c2f0c3ffa55ea0e0eb0f56f9",
+                {
+                    center: [38.5, -86.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c4796482e4ae63ef0aba1a3dccdb0c9b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c4796482e4ae63ef0aba1a3dccdb0c9b.addTo(map_815995c1c2f0c3ffa55ea0e0eb0f56f9);
+        
+    
+            var marker_e412a242a70a6c8ff2d022ac90a94db2 = L.marker(
+                [38.893424098023765, -86.5149924175818],
+                {
+}
+            ).addTo(map_815995c1c2f0c3ffa55ea0e0eb0f56f9);
+        
+    
+            var icon_058359e5a8e629edec2706655ee5a739 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "map-pin",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4679db4a750cbdda80e58c379f9cd5e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afdba7eece022a262e3bc3ff0484316f = $(`<div id="html_afdba7eece022a262e3bc3ff0484316f" style="width: 100.0%; height: 100.0%;"><b>The Halfway Point</b><br>The perfect spot for a road trip hug.</div>`)[0];
+                popup_4679db4a750cbdda80e58c379f9cd5e8.setContent(html_afdba7eece022a262e3bc3ff0484316f);
+            
+        
+
+        marker_e412a242a70a6c8ff2d022ac90a94db2.bindPopup(popup_4679db4a750cbdda80e58c379f9cd5e8)
+        ;
+
+        
+    
+    
+                marker_e412a242a70a6c8ff2d022ac90a94db2.setIcon(icon_058359e5a8e629edec2706655ee5a739);
+            
+    
+            ant_path_b651355214697f3c88412ad2905ef96b = L.polyline.antPath(
+              [[35.294115873209485, -80.68320214758597], [42.492732322838044, -92.34678268757763]],
+              {
+  "stroke": true,
+  "color": "#FF0000",
+  "weight": 5,
+  "opacity": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#FF0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 400,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_815995c1c2f0c3ffa55ea0e0eb0f56f9);
+        
+    
+            var marker_7fde01bc629b623d988f4412450eb900 = L.marker(
+                [35.294115873209485, -80.68320214758597],
+                {
+}
+            ).addTo(map_815995c1c2f0c3ffa55ea0e0eb0f56f9);
+        
+    
+            var icon_cfaa34356ac0496896fe56bbb081a180 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_622cc86a664fc1642fe44c3dad55636f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04ca21529fa974c887654691c632405c = $(`<div id="html_04ca21529fa974c887654691c632405c" style="width: 100.0%; height: 100.0%;">CLT: 11:20 PM</div>`)[0];
+                popup_622cc86a664fc1642fe44c3dad55636f.setContent(html_04ca21529fa974c887654691c632405c);
+            
+        
+
+        marker_7fde01bc629b623d988f4412450eb900.bindPopup(popup_622cc86a664fc1642fe44c3dad55636f)
+        ;
+
+        
+    
+    
+                marker_7fde01bc629b623d988f4412450eb900.setIcon(icon_cfaa34356ac0496896fe56bbb081a180);
+            
+    
+            var marker_4b9e8ed9bd91a12460f5443c42271d86 = L.marker(
+                [42.492732322838044, -92.34678268757763],
+                {
+}
+            ).addTo(map_815995c1c2f0c3ffa55ea0e0eb0f56f9);
+        
+    
+            var icon_3722a1de1477c21d1580450f16c37641 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "heart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f3d3b480c18f0c5a8f3462d9e030184 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_478f79b8e65aa4e21130f299e84f26c6 = $(`<div id="html_478f79b8e65aa4e21130f299e84f26c6" style="width: 100.0%; height: 100.0%;">ALO: 10:20 PM</div>`)[0];
+                popup_1f3d3b480c18f0c5a8f3462d9e030184.setContent(html_478f79b8e65aa4e21130f299e84f26c6);
+            
+        
+
+        marker_4b9e8ed9bd91a12460f5443c42271d86.bindPopup(popup_1f3d3b480c18f0c5a8f3462d9e030184)
+        ;
+
+        
+    
+    
+                marker_4b9e8ed9bd91a12460f5443c42271d86.setIcon(icon_3722a1de1477c21d1580450f16c37641);
+            
+</script>
+</html>

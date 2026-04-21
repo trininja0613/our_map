@@ -18,7 +18,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_2bbe3393479ce047d35ef5b22b6786f6 {
+                #map_534d8f7cc73c3f7abff566db6e828845 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -70,42 +70,35 @@
         font-family: 'Segoe UI', sans-serif; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-
-    /* This part is the "Mobile Magic" */
+    .countdown-banner {
+        background: linear-gradient(45deg, #8B0000, #FF0000);
+        color: white;
+        padding: 5px;
+        border-radius: 6px;
+        text-align: center;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
     @media only screen and (max-width: 600px) {
-        .connection-box {
-            width: 180px;      /* Slimmer box */
-            padding: 8px;      /* Less padding */
-            top: 10px; 
-            right: 10px;
-        }
-        .connection-box b {
-            font-size: 11px;   /* Smaller labels */
-        }
-        .connection-box span, .connection-box div {
-            font-size: 10px;   /* Tiny data text */
-        }
-        .connection-title {
-            font-size: 12px !important;
-        }
-        .connection-quote {
-            display: none;     /* Hide the quote on mobile to save space */
-        }
+        .connection-box { width: 180px; padding: 8px; top: 10px; right: 10px; }
+        .connection-box b { font-size: 11px; }
+        .connection-box span, .connection-box div { font-size: 10px; }
+        .connection-title { font-size: 12px !important; }
+        .countdown-banner { font-size: 10px; padding: 3px; }
+        .connection-quote { display: none; }
     }
 </style>
 
 <div class="connection-box">
-    <center><b class="connection-title" style="color: #8B0000; font-size: 15px;">Connection Status</b></center>
+    <div class="countdown-banner"><b>16 Days</b> until Charlotte ❤️</div>
+    <center><b class="connection-title" style="color: #8B0000; font-size: 14px;">Connection Status</b></center>
     <hr style="border: 0.5px solid #ccc; margin: 5px 0;">
     <div>
-        <b>Waterloo:</b> <span>11:45 PM • 53°F, broken clouds</span><br>
-        <b>Charlotte:</b> <span>12:45 AM • 51°F, clear sky</span><br>
+        <b>Waterloo:</b> <span>12:21 AM • 54°F, broken clouds</span><br>
+        <b>Charlotte:</b> <span>01:21 AM • 50°F, clear sky</span><br>
         <b>Gap:</b> <span>799 miles</span><br>
         <b>Travel:</b> <span>~12h Drive / 2.5h Flight</span>
     </div>
-    <p class="connection-quote" style="font-size: 10px; color: #666; margin-top: 5px; font-style: italic;">
-        "No matter the distance..."
-    </p>
 </div>
     
 <script>
@@ -119,14 +112,14 @@ function showSecret() {
     A Message for Reign
 </button>
     
-            <div class="folium-map" id="map_2bbe3393479ce047d35ef5b22b6786f6" ></div>
+            <div class="folium-map" id="map_534d8f7cc73c3f7abff566db6e828845" ></div>
         
 </body>
 <script>
     
     
-            var map_2bbe3393479ce047d35ef5b22b6786f6 = L.map(
-                "map_2bbe3393479ce047d35ef5b22b6786f6",
+            var map_534d8f7cc73c3f7abff566db6e828845 = L.map(
+                "map_534d8f7cc73c3f7abff566db6e828845",
                 {
                     center: [38.5, -86.5],
                     crs: L.CRS.EPSG3857,
@@ -143,7 +136,7 @@ function showSecret() {
 
         
     
-            var tile_layer_d7674622b468318d8e32530daae3840d = L.tileLayer(
+            var tile_layer_abd1685d4432067f552f546db8d958eb = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -160,10 +153,10 @@ function showSecret() {
             );
         
     
-            tile_layer_d7674622b468318d8e32530daae3840d.addTo(map_2bbe3393479ce047d35ef5b22b6786f6);
+            tile_layer_abd1685d4432067f552f546db8d958eb.addTo(map_534d8f7cc73c3f7abff566db6e828845);
         
     
-            ant_path_53bc0c1dd955234bb2a668cc7b1a2c06 = L.polyline.antPath(
+            ant_path_1de238734efcc7acd1f42104c9838e52 = L.polyline.antPath(
               [[35.294115873209485, -80.68320214758597], [42.492732322838044, -92.34678268757763]],
               {
   "stroke": true,
@@ -190,50 +183,50 @@ function showSecret() {
   "delay": 800,
   "pulseColor": "#FFFFFF",
 }
-        ).addTo(map_2bbe3393479ce047d35ef5b22b6786f6);
+        ).addTo(map_534d8f7cc73c3f7abff566db6e828845);
         
     
-            var marker_e6599ea5dd4dce48191960d950ac9575 = L.marker(
+            var marker_d0865cf30e43c291efe6b40d0366a7fa = L.marker(
                 [38.893424098023765, -86.5149924175818],
                 {
 }
-            ).addTo(map_2bbe3393479ce047d35ef5b22b6786f6);
+            ).addTo(map_534d8f7cc73c3f7abff566db6e828845);
         
     
-            var div_icon_d4fee100e130eb431b65022725aabbdc = L.divIcon({
+            var div_icon_0affc32de9bdcaad2434c7d89eebf009 = L.divIcon({
   "html": "\u003cdiv style=\"font-size: 30px; filter: drop-shadow(0 0 5px gold);\"\u003e\u2600\ufe0f\u003c/div\u003e",
   "className": "empty",
 });
         
     
-        var popup_90131b650e732a440236edc6a26b95fe = L.popup({
+        var popup_2431380210a4e3c393a11fb2246d8b51 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6642f241789362738995d4e910fb129a = $(`<div id="html_6642f241789362738995d4e910fb129a" style="width: 100.0%; height: 100.0%;">The warmth that bridges the distance.</div>`)[0];
-                popup_90131b650e732a440236edc6a26b95fe.setContent(html_6642f241789362738995d4e910fb129a);
+                var html_b11f5f0f152f1fe7363dff64f6b62b4f = $(`<div id="html_b11f5f0f152f1fe7363dff64f6b62b4f" style="width: 100.0%; height: 100.0%;">The warmth that bridges the distance.</div>`)[0];
+                popup_2431380210a4e3c393a11fb2246d8b51.setContent(html_b11f5f0f152f1fe7363dff64f6b62b4f);
             
         
 
-        marker_e6599ea5dd4dce48191960d950ac9575.bindPopup(popup_90131b650e732a440236edc6a26b95fe)
+        marker_d0865cf30e43c291efe6b40d0366a7fa.bindPopup(popup_2431380210a4e3c393a11fb2246d8b51)
         ;
 
         
     
     
-                marker_e6599ea5dd4dce48191960d950ac9575.setIcon(div_icon_d4fee100e130eb431b65022725aabbdc);
+                marker_d0865cf30e43c291efe6b40d0366a7fa.setIcon(div_icon_0affc32de9bdcaad2434c7d89eebf009);
             
     
-            var marker_9b232a8252906de2dae920aec60b4f72 = L.marker(
+            var marker_710f11b6b1bd393215ef9f553d817d28 = L.marker(
                 [35.294115873209485, -80.68320214758597],
                 {
 }
-            ).addTo(map_2bbe3393479ce047d35ef5b22b6786f6);
+            ).addTo(map_534d8f7cc73c3f7abff566db6e828845);
         
     
-            var icon_94d93852399601824419177395660fdd = L.AwesomeMarkers.icon(
+            var icon_dd55cf9c408ffd4874e8d1eedf4133f2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -244,34 +237,34 @@ function showSecret() {
             );
         
     
-        var popup_53836a66815519d8b1c8ebcfa01fae8a = L.popup({
+        var popup_a1837c2d3c083483f29c9c55e457e3f3 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_a628ce374f928ed79088151d13efc047 = $(`<div id="html_a628ce374f928ed79088151d13efc047" style="width: 100.0%; height: 100.0%;">My House</div>`)[0];
-                popup_53836a66815519d8b1c8ebcfa01fae8a.setContent(html_a628ce374f928ed79088151d13efc047);
+                var html_a1025476a57be64a1b9315d3c6b21aea = $(`<div id="html_a1025476a57be64a1b9315d3c6b21aea" style="width: 100.0%; height: 100.0%;">My House</div>`)[0];
+                popup_a1837c2d3c083483f29c9c55e457e3f3.setContent(html_a1025476a57be64a1b9315d3c6b21aea);
             
         
 
-        marker_9b232a8252906de2dae920aec60b4f72.bindPopup(popup_53836a66815519d8b1c8ebcfa01fae8a)
+        marker_710f11b6b1bd393215ef9f553d817d28.bindPopup(popup_a1837c2d3c083483f29c9c55e457e3f3)
         ;
 
         
     
     
-                marker_9b232a8252906de2dae920aec60b4f72.setIcon(icon_94d93852399601824419177395660fdd);
+                marker_710f11b6b1bd393215ef9f553d817d28.setIcon(icon_dd55cf9c408ffd4874e8d1eedf4133f2);
             
     
-            var marker_695368e2bc55fd1ff7d1efb9370bc21c = L.marker(
+            var marker_279f4262446a44f2646df97dceb90875 = L.marker(
                 [42.492732322838044, -92.34678268757763],
                 {
 }
-            ).addTo(map_2bbe3393479ce047d35ef5b22b6786f6);
+            ).addTo(map_534d8f7cc73c3f7abff566db6e828845);
         
     
-            var icon_b37671a9dea3e39639938b7469be2ea5 = L.AwesomeMarkers.icon(
+            var icon_e81cc3da478016bee6989bc05d98f9fa = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -282,24 +275,24 @@ function showSecret() {
             );
         
     
-        var popup_237f6d68c51cb158df35e6a9a9e6b2e1 = L.popup({
+        var popup_c91fd44af2c9c49bf16ad7dd9e070156 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_42a34eca4af43b4f2e2d18096b2232c9 = $(`<div id="html_42a34eca4af43b4f2e2d18096b2232c9" style="width: 100.0%; height: 100.0%;">Her House</div>`)[0];
-                popup_237f6d68c51cb158df35e6a9a9e6b2e1.setContent(html_42a34eca4af43b4f2e2d18096b2232c9);
+                var html_202fe77d0db3c825fbac902446bfb23e = $(`<div id="html_202fe77d0db3c825fbac902446bfb23e" style="width: 100.0%; height: 100.0%;">Her House</div>`)[0];
+                popup_c91fd44af2c9c49bf16ad7dd9e070156.setContent(html_202fe77d0db3c825fbac902446bfb23e);
             
         
 
-        marker_695368e2bc55fd1ff7d1efb9370bc21c.bindPopup(popup_237f6d68c51cb158df35e6a9a9e6b2e1)
+        marker_279f4262446a44f2646df97dceb90875.bindPopup(popup_c91fd44af2c9c49bf16ad7dd9e070156)
         ;
 
         
     
     
-                marker_695368e2bc55fd1ff7d1efb9370bc21c.setIcon(icon_b37671a9dea3e39639938b7469be2ea5);
+                marker_279f4262446a44f2646df97dceb90875.setIcon(icon_e81cc3da478016bee6989bc05d98f9fa);
             
 </script>
 </html>

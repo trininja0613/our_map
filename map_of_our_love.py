@@ -51,22 +51,56 @@ m = folium.Map(location=[38.5, -86.5], zoom_start=6, tiles="Cartodb dark_matter"
 
 # 1. The Dashboard (Now with Travel Math)
 dashboard_html = f"""
-<div style="position: fixed; top: 25px; right: 25px; width: 270px;
-            background-color: rgba(255, 255, 255, 0.95); border: 2px solid #FF0000;
-            z-index: 9999; border-radius: 12px; padding: 15px;
-            font-family: 'Segoe UI', sans-serif; box-shadow: 0 4px 20px rgba(255,0,0,0.4)">
-    <center><b style="color: #8B0000; font-size: 15px;">Connection Status</b></center>
-    <hr style="border: 0.5px solid #ccc; margin: 8px 0;">
-    <div style="font-size: 13px; color: #333;">
-        <b>Waterloo:</b> {alo_now} • {alo_weather}<br>
-        <b>Charlotte:</b> {clt_now} • {clt_weather}<br>
-        <hr style="border: 0.5px solid #eee;">
-        <b>Distance:</b> {exact_miles:.0f} miles<br>
-        <b>By Car:</b> ~{drive_time:.0f} hours of driving<br>
-        <b>By Air:</b> ~{flight_time} hours of flying<br>
-        <hr style="border: 0.5px solid #eee;">
-        <b>Status:</b> <span style="color: #FF0000; font-weight: bold;">Pulse Synced to Heartbeat</span>
+<style>
+    .connection-box {{
+        position: fixed; 
+        top: 15px; 
+        right: 15px; 
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.9); 
+        border: 2px solid #FF0000;
+        z-index: 9999; 
+        border-radius: 12px; 
+        padding: 12px;
+        font-family: 'Segoe UI', sans-serif; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }}
+
+    /* This part is the "Mobile Magic" */
+    @media only screen and (max-width: 600px) {{
+        .connection-box {{
+            width: 180px;      /* Slimmer box */
+            padding: 8px;      /* Less padding */
+            top: 10px; 
+            right: 10px;
+        }}
+        .connection-box b {{
+            font-size: 11px;   /* Smaller labels */
+        }}
+        .connection-box span, .connection-box div {{
+            font-size: 10px;   /* Tiny data text */
+        }}
+        .connection-title {{
+            font-size: 12px !important;
+        }}
+        .connection-quote {{
+            display: none;     /* Hide the quote on mobile to save space */
+        }}
+    }}
+</style>
+
+<div class="connection-box">
+    <center><b class="connection-title" style="color: #8B0000; font-size: 15px;">Connection Status</b></center>
+    <hr style="border: 0.5px solid #ccc; margin: 5px 0;">
+    <div>
+        <b>Waterloo:</b> <span>{alo_now} • {alo_weather}</span><br>
+        <b>Charlotte:</b> <span>{clt_now} • {clt_weather}</span><br>
+        <b>Gap:</b> <span>{exact_miles:.0f} miles</span><br>
+        <b>Travel:</b> <span>~{drive_time:.0f}h Drive / {flight_time}h Flight</span>
     </div>
+    <p class="connection-quote" style="font-size: 10px; color: #666; margin-top: 5px; font-style: italic;">
+        "No matter the distance..."
+    </p>
 </div>
 """
 m.get_root().html.add_child(folium.Element(dashboard_html))
@@ -97,7 +131,7 @@ folium.Marker(her_house, popup="Her House", icon=folium.Icon(color='red', icon='
 script = """
 <script>
 function showSecret() {
-    alert("This string pulses at the speed of my heart whenever I'm thinking of you. See you soon, Reign! ❤️");
+    alert("I created this code because you are my muse. You influence everything I create. I love you so much, you mean the world to me. No matter the distance, I feel connected to you. This string pulses at the speed of my heart whenever I'm thinking of you. Mahal Kita, Reign! ❤️");
 }
 </script>
 <button onclick="showSecret()" style="position:fixed; bottom:30px; left:30px; z-index:9999; 

@@ -85,7 +85,6 @@ dashboard_html = f"""
     @media only screen and (max-width: 600px) {{
         .connection-box {{ width: 180px; padding: 8px; }}
         .connection-box b, .connection-box span {{ font-size: 10px; }}
-        .countdown-banner {{ font-size: 10px; }}
     }}
 </style>
 
@@ -94,8 +93,8 @@ dashboard_html = f"""
     <center><b style="color: #8B0000;">Connection Status</b></center>
     <hr style="border: 0.5px solid #ccc; margin: 5px 0;">
     <div>
-        <b>Waterloo:</b> <span>{alo_now} • {alo_weather}</span><br>
-        <b>Charlotte:</b> <span>{clt_now} • {clt_weather}</span><br>
+        <b>Waterloo:</b> <span id="alo-clock">Syncing...</span> • <span>{alo_weather}</span><br>
+        <b>Charlotte:</b> <span id="clt-clock">Syncing...</span> • <span>{clt_weather}</span><br>
         <b>Gap:</b> <span>{exact_miles:.0f} miles</span><br>
         <b>Travel:</b> <span>~{drive_time:.0f}h Drive / {flight_time}h Flight</span>
     </div>
@@ -116,11 +115,29 @@ folium.Marker(my_house, popup="My House", icon=folium.Icon(color='blue', icon='h
 folium.Marker(her_house, popup="Her House", icon=folium.Icon(color='red', icon='heart')).add_to(m)
 
 # Secret Message
-script = """
+live_clock_script = """
 <script>
+function updateClocks() {
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    
+    // Waterloo is Central Time
+    document.getElementById('alo-clock').innerHTML = new Date().toLocaleTimeString('en-US', {
+        ...options, timeZone: 'America/Chicago'
+    });
+    
+    // Charlotte is Eastern Time
+    document.getElementById('clt-clock').innerHTML = new Date().toLocaleTimeString('en-US', {
+        ...options, timeZone: 'America/New_York'
+    });
+}
+
 function showSecret() {
     alert("I created this code because you are my muse. You influence everything I create. I love you so much, you mean the world to me. No matter the distance, I feel connected to you. This string pulses at the speed of my heart whenever I'm thinking of you. Mahal Kita, Reign! ❤️");
 }
+
+// Update every second
+setInterval(updateClocks, 1000);
+updateClocks(); // Initial call
 </script>
 <button onclick="showSecret()" style="position:fixed; bottom:30px; left:30px; z-index:9999; 
     padding:12px 24px; background:linear-gradient(45deg, #8B0000, #FF0000); color:white; 
@@ -128,7 +145,8 @@ function showSecret() {
     A Message for Reign
 </button>
 """
-m.get_root().html.add_child(folium.Element(script))
+m.get_root().html.add_child(folium.Element(dashboard_html), name="dashboard")
+m.get_root().html.add_child(folium.Element(live_clock_script))
 m.get_root().header.add_child(folium.Element('<meta name="viewport" content="width=device-width, initial-scale=1.0">'))
 
 m.save("index.html")

@@ -21,7 +21,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate Fresh Map
-        run: python your_script_name.py # <-- CHANGE THIS to your actual .py filename
+        run: python map_of_our_love.py # <-- CHANGE THIS to your actual .py filename
 
       - name: Deploy Update to Repo
         run: |

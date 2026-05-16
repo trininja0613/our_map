@@ -18,7 +18,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_1e799cd7a5a18aece9652f92c161e97f {
+                #map_c1d0f4717546d74b6d921765700132e5 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -80,12 +80,12 @@
     <center><b style="color: #8B0000;">Connection Status</b></center>
     <hr style="border: 0.5px solid #ccc; margin: 5px 0;">
     <div>
-        <b>Waterloo:</b> <span id="alo-clock">Syncing...</span> • <span>88°F, clear sky</span><br>
-        <b>Charlotte:</b> <span id="clt-clock">Syncing...</span> • <span>70°F, few clouds</span><br>
+        <b>Waterloo:</b> <span id="alo-clock">Syncing...</span> • <span>66°F, moderate rain</span><br>
+        <b>Charlotte:</b> <span id="clt-clock">Syncing...</span> • <span>56°F, clear sky</span><br>
         <b>Gap:</b> <span>799 miles</span><br>
         <b>Travel:</b> <span>~12h Drive / 2.5h Flight</span>
     </div>
-    <div class="sync-text">Last Heartbeat: May 15, 07:57 PM ET</div>
+    <div class="sync-text">Last Heartbeat: May 15, 11:51 PM ET</div>
 </div>
     
 <script>
@@ -117,14 +117,14 @@ updateClocks(); // Initial call
     A Message for Reign
 </button>
     
-            <div class="folium-map" id="map_1e799cd7a5a18aece9652f92c161e97f" ></div>
+            <div class="folium-map" id="map_c1d0f4717546d74b6d921765700132e5" ></div>
         
 </body>
 <script>
     
     
-            var map_1e799cd7a5a18aece9652f92c161e97f = L.map(
-                "map_1e799cd7a5a18aece9652f92c161e97f",
+            var map_c1d0f4717546d74b6d921765700132e5 = L.map(
+                "map_c1d0f4717546d74b6d921765700132e5",
                 {
                     center: [38.5, -86.5],
                     crs: L.CRS.EPSG3857,
@@ -141,7 +141,7 @@ updateClocks(); // Initial call
 
         
     
-            var tile_layer_22cb83075ecee6261767e702b7b5d2de = L.tileLayer(
+            var tile_layer_76184a7bed57f1fdec362b38d86ff803 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -158,10 +158,10 @@ updateClocks(); // Initial call
             );
         
     
-            tile_layer_22cb83075ecee6261767e702b7b5d2de.addTo(map_1e799cd7a5a18aece9652f92c161e97f);
+            tile_layer_76184a7bed57f1fdec362b38d86ff803.addTo(map_c1d0f4717546d74b6d921765700132e5);
         
     
-            ant_path_e9fbad006a057df0cd95c5112718c4e7 = L.polyline.antPath(
+            ant_path_2706398d6f936fdd0d7dfc97f0298295 = L.polyline.antPath(
               [[35.294115873209485, -80.68320214758597], [42.492732322838044, -92.34678268757763]],
               {
   "stroke": true,
@@ -188,33 +188,33 @@ updateClocks(); // Initial call
   "delay": 800,
   "pulseColor": "#FFFFFF",
 }
-        ).addTo(map_1e799cd7a5a18aece9652f92c161e97f);
+        ).addTo(map_c1d0f4717546d74b6d921765700132e5);
         
     
-            var marker_e07c08edccb743023520bd0c61fbc22b = L.marker(
+            var marker_8659f5e470b0bfe1fee08cd6336b38bb = L.marker(
                 [38.893424098023765, -86.5149924175818],
                 {
 }
-            ).addTo(map_1e799cd7a5a18aece9652f92c161e97f);
+            ).addTo(map_c1d0f4717546d74b6d921765700132e5);
         
     
-            var div_icon_c07771bb240a4d71d374c8f1e04dd59f = L.divIcon({
+            var div_icon_90b410191d2a956ea99e7638c564b471 = L.divIcon({
   "html": "\u003cdiv style=\"font-size: 30px; filter: drop-shadow(0 0 5px gold);\"\u003e\u2600\ufe0f\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_e07c08edccb743023520bd0c61fbc22b.setIcon(div_icon_c07771bb240a4d71d374c8f1e04dd59f);
+                marker_8659f5e470b0bfe1fee08cd6336b38bb.setIcon(div_icon_90b410191d2a956ea99e7638c564b471);
             
     
-            var marker_c7551903ebca9417c02230685a7cee76 = L.marker(
+            var marker_39a108e5a488cb349eb35d1a38775506 = L.marker(
                 [35.294115873209485, -80.68320214758597],
                 {
 }
-            ).addTo(map_1e799cd7a5a18aece9652f92c161e97f);
+            ).addTo(map_c1d0f4717546d74b6d921765700132e5);
         
     
-            var icon_86dd777a6fbf7387d3554b1ea42513de = L.AwesomeMarkers.icon(
+            var icon_a5c6c9a305b794bdcdbcd08dcec5a00f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -225,34 +225,34 @@ updateClocks(); // Initial call
             );
         
     
-        var popup_71e1a3a992d7c9c81357f0895196aa6b = L.popup({
+        var popup_ab330a0aba902b6dcc278d3dd3ae10cc = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_323880359724118638b3c84496ef1af5 = $(`<div id="html_323880359724118638b3c84496ef1af5" style="width: 100.0%; height: 100.0%;">My House</div>`)[0];
-                popup_71e1a3a992d7c9c81357f0895196aa6b.setContent(html_323880359724118638b3c84496ef1af5);
+                var html_23c9284ee474a246ea0b31c057b71c9f = $(`<div id="html_23c9284ee474a246ea0b31c057b71c9f" style="width: 100.0%; height: 100.0%;">My House</div>`)[0];
+                popup_ab330a0aba902b6dcc278d3dd3ae10cc.setContent(html_23c9284ee474a246ea0b31c057b71c9f);
             
         
 
-        marker_c7551903ebca9417c02230685a7cee76.bindPopup(popup_71e1a3a992d7c9c81357f0895196aa6b)
+        marker_39a108e5a488cb349eb35d1a38775506.bindPopup(popup_ab330a0aba902b6dcc278d3dd3ae10cc)
         ;
 
         
     
     
-                marker_c7551903ebca9417c02230685a7cee76.setIcon(icon_86dd777a6fbf7387d3554b1ea42513de);
+                marker_39a108e5a488cb349eb35d1a38775506.setIcon(icon_a5c6c9a305b794bdcdbcd08dcec5a00f);
             
     
-            var marker_62ff261ba0a4cf022cc87289a9701e07 = L.marker(
+            var marker_071eb0ac0cb1c6316937bf98dcd7ba34 = L.marker(
                 [42.492732322838044, -92.34678268757763],
                 {
 }
-            ).addTo(map_1e799cd7a5a18aece9652f92c161e97f);
+            ).addTo(map_c1d0f4717546d74b6d921765700132e5);
         
     
-            var icon_74097a0c2f3be0d05e9897b490f56a9f = L.AwesomeMarkers.icon(
+            var icon_942b1189cf13589461be35cf8e5f7223 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -263,24 +263,24 @@ updateClocks(); // Initial call
             );
         
     
-        var popup_41f820fe23074b0ef1761bab3f90622e = L.popup({
+        var popup_2824aa5ee35d85d96917c652f746571c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_bd74e54926e7d428d64224d7bd080f93 = $(`<div id="html_bd74e54926e7d428d64224d7bd080f93" style="width: 100.0%; height: 100.0%;">Her House</div>`)[0];
-                popup_41f820fe23074b0ef1761bab3f90622e.setContent(html_bd74e54926e7d428d64224d7bd080f93);
+                var html_6d4368ef90b00d13315c6dfdf5394add = $(`<div id="html_6d4368ef90b00d13315c6dfdf5394add" style="width: 100.0%; height: 100.0%;">Her House</div>`)[0];
+                popup_2824aa5ee35d85d96917c652f746571c.setContent(html_6d4368ef90b00d13315c6dfdf5394add);
             
         
 
-        marker_62ff261ba0a4cf022cc87289a9701e07.bindPopup(popup_41f820fe23074b0ef1761bab3f90622e)
+        marker_071eb0ac0cb1c6316937bf98dcd7ba34.bindPopup(popup_2824aa5ee35d85d96917c652f746571c)
         ;
 
         
     
     
-                marker_62ff261ba0a4cf022cc87289a9701e07.setIcon(icon_74097a0c2f3be0d05e9897b490f56a9f);
+                marker_071eb0ac0cb1c6316937bf98dcd7ba34.setIcon(icon_942b1189cf13589461be35cf8e5f7223);
             
 </script>
 </html>
